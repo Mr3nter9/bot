@@ -52,7 +52,7 @@ async def execute_script(event):
             if i == 100:
                 sleep(1.4)
                 break
-            sleep(0.05)
+            sleep(0.2)
             req = requests.get(f"https://t.me/{user}")
             if req.text.find(
                     'If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"') >= 0:
@@ -68,7 +68,7 @@ async def execute_script(event):
 ----------------------------------
 « owner » :  @isiraqi »""")
              except Exception:
-              pass
+                 requests.post(f"https://api.telegram.org/bot{token}/sendmessage?chat_id={id}&text=erorr")
             else:
                 print(f"NOOO : {user}" + ' ' + str(i) + " " + str(x))
 

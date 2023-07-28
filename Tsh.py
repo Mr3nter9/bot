@@ -30,7 +30,6 @@ async def spammer(event):
 
    else:
     print(f"NOOO : {user}" +' '+ str(i))
-  break
 
 
 @led.on(events.NewMessage(pattern=r'^x', outgoing=True))

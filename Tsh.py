@@ -18,20 +18,19 @@ async def spammer(event):
  while True:
   i = 0
   while True:
-   i+=1
+   i += +1
    if i == 100:
     sleep(1.4)
     break
-   sleep(0.15)
-   while True:
-    req = requests.get(f"https://t.me/{user}")
-    if req.text.find('If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"') >= 0:
-     await led.send_message('botfather', user)
-     sleep(2)
+   sleep(0.17)
+   req = requests.get(f"https://t.me/{user}")
+   if req.text.find('If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"') >= 0:
+    await led.send_message('botfather', user)
+    sleep(2)
 
-    else:
-     print(f"NOOO : {user}" +' '+ str(i))
-   break
+   else:
+    print(f"NOOO : {user}" +' '+ str(i))
+  break
 
 
 @led.on(events.NewMessage(pattern=r'^x', outgoing=True))
